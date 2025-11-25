@@ -1,0 +1,311 @@
+/* ---------- RESET SIMPLE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- BACKGROUND GLOBAL STYLE MANGA / MER ---------- */
+body {
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 40%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.25) 0, rgba(255, 255, 255, 0) 45%),
+    linear-gradient(to bottom, #7dd3fc 0, #0ea5e9 45%, #0369a1 70%, #022c22 100%);
+}
+
+/* ---------- LOADER (désactivé) ---------- */
+#loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #050816;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-loader {
+  max-width: 150px;
+  height: auto;
+}
+
+/* ---------- CARTE PRINCIPALE STYLE PARCHMENT ---------- */
+.linktree-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 26px 18px 20px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, #fef9c3 0, #facc15 40%, #f97316 110%);
+  position: relative;
+  text-align: center;
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.45),
+    0 0 0 3px #7c2d12;
+  border: 3px solid #451a03;
+  overflow: hidden;
+}
+
+/* Effet "parchemin déchiré" en haut et en bas */
+.linktree-card::before,
+.linktree-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background-image: radial-gradient(circle at 50% -40%, transparent 62%, rgba(0, 0, 0, 0.18) 64%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.linktree-card::before {
+  top: -8px;
+}
+
+.linktree-card::after {
+  bottom: -8px;
+  transform: scaleY(-1);
+}
+
+/* Petit badge style "Wanted" en haut */
+.linktree-card-header {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 2px solid #7c2d12;
+  background: rgba(248, 250, 252, 0.8);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7c2d12;
+}
+
+/* ---------- PHOTO DE PROFIL ---------- */
+.profile-img {
+  width: 104px;
+  height: 104px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  border: 3px solid #facc15;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  background: #111827;
+}
+
+/* ---------- TITRE + SOUS-TITRE ---------- */
+.name {
+  font-family: "Bangers", system-ui, sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111827;
+  margin-bottom: 4px;
+  text-shadow:
+    3px 3px 0 #facc15,
+    5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.games {
+  font-size: 0.85rem;
+  color: #7c2d12;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* ---------- BOUTON VCARD ---------- */
+.vcard-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.86);
+  color: #111827;
+  text-decoration: none;
+  border: 2px solid #7c2d12;
+  box-shadow: 0 4px 0 #7c2d12;
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    background 0.12s ease-out;
+}
+
+.vcard-bubble i {
+  font-size: 1rem;
+}
+
+.vcard-bubble:hover {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #7c2d12;
+  background: #fef9c3;
+}
+
+/* ---------- LIENS PRINCIPAUX ---------- */
+.linktree-links {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.linktree-link {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  margin: 7px 0;
+  border-radius: 999px;
+  border: 2px solid #78350f;
+  background: linear-gradient(135deg, #b45309 0, #92400e 35%, #451a03 100%);
+  color: #fefce8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 0 #451a03;
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    filter 0.12s ease-out;
+}
+
+.linktree-link i {
+  margin-right: 8px;
+}
+
+.linktree-link:hover {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #451a03;
+  filter: brightness(1.07);
+}
+
+/* ---------- ICÔNES DÉCO ONE PIECE (NON CLIQUABLES) ---------- */
+.onepiece-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.onepiece-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #fef9c3 0, #facc15 40%, #b45309 100%);
+  border: 2px solid #451a03;
+  box-shadow: 0 4px 0 #451a03;
+}
+
+.onepiece-icon i {
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+/* ---------- FOOTER / POWERED BY ---------- */
+.powered {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #78350f;
+  font-weight: 600;
+}
+
+.powered span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ============================= */
+/*          MEDIA QUERIES        */
+/* ============================= */
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  .linktree-card {
+    padding: 22px 12px 18px;
+  }
+
+  .profile-img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .linktree-link {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Tablettes et plus */
+@media (min-width: 768px) {
+  body {
+    padding: 32px;
+  }
+
+  .linktree-card {
+    max-width: 520px;
+    padding: 30px 26px 22px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .linktree-link {
+    font-size: 1rem;
+  }
+}
+
+/* Grands écrans */
+@media (min-width: 1024px) {
+  .linktree-card {
+    max-width: 560px;
+    border-radius: 32px;
+  }
+}
