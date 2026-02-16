@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,82 +7,76 @@
 
   <!-- Icônes + polices -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Ton CSS One Piece -->
+  <!-- Ton CSS -->
   <link rel="stylesheet" href="css/onevme-onepiece.css">
 </head>
 
 <body>
-  <!-- Loader (optionnel, inactif pour l’instant) -->
-  <div id="loader">
+  <!-- Loader (optionnel - désactivé par défaut en CSS) -->
+  <div id="loader" aria-hidden="true">
     <img src="images/onevme.jpg" alt="onevme" class="logo-loader" />
   </div>
 
-  <!-- Carte façon One Piece -->
-  <div class="linktree-card">
-    <div class="linktree-card-header">
-      WANTED · PRIME GAMER
-    </div>
+  <main class="page">
+    <section class="card" aria-label="Carte de liens OneVme">
+      <div class="card-watermark" aria-hidden="true"></div>
 
-    <!-- Photo de profil (image manga) -->
-    <img class="profile-img" src="images/onevme.jpg" alt="OneVme" />
-
-    <!-- Nom + description -->
-    <div class="name">OneVme</div>
-    <div class="subtitle">Streameur jeux vidéo</div>
-    <div class="games">Fortnite • Rainbow Six Siege • EA Sports FC 26 ...</div>
-
-    <!-- vCard (optionnelle) 
- <a href="vcard/OneVme.vcf" download class="vcard-bubble" title="Télécharger la carte de visite OneVme">
-  <i class="fas fa-skull-crossbones"></i>
-  <span>Carte de visite de l'équipage</span>
-</a>
--->
-
-    <!-- Liens principaux -->
-    <div class="linktree-links">
-      <a href="https://www.twitch.tv/onevme_" target="_blank" class="linktree-link">
-        <i class="fab fa-twitch"></i> Regarder le live Twitch
-      </a>
-      <a href="https://www.youtube.com/@onevme_" target="_blank" class="linktree-link">
-        <i class="fab fa-youtube"></i> Chaîne YouTube
-      </a>
-      <a href="https://www.tiktok.com/@onevme_" target="_blank" class="linktree-link">
-        <i class="fab fa-tiktok"></i> TikTok
-      </a>
-      <a href="https://discord.gg/onevme" target="_blank" class="linktree-link">
-        <i class="fab fa-discord"></i> Rejoindre le Discord
-      </a>
-       <a href="https://www.instagram.com/onevme_" target="_blank" class="linktree-link">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="mailto:onevme.pro@gmail.com" class="linktree-link">
-        <i class="fas fa-envelope"></i> Contact pro
-      </a>
-    </div>
-
-    <!-- Décor One Piece non cliquable -->
-    <div class="onepiece-row">
-      <div class="onepiece-icon">
-        <i class="fas fa-skull-crossbones" aria-hidden="true"></i>
+      <div class="badge">
+        <i class="fa-solid fa-skull-crossbones" aria-hidden="true"></i>
+        WANTED · PRIME GAMER
       </div>
-      <div class="onepiece-icon">
-        <i class="fas fa-map" aria-hidden="true"></i>
-      </div>
-      <div class="onepiece-icon">
-        <i class="fas fa-anchor" aria-hidden="true"></i>
-      </div>
-      <div class="onepiece-icon">
-        <i class="fas fa-compass" aria-hidden="true"></i>
-      </div>
-    </div>
 
-    <div class="powered">
-      Powered by <span>Team OneVme @jojaws</span>
-    </div>
-  </div>
+      <header class="profile">
+        <img class="avatar" src="images/onevme.jpg" alt="Photo de profil OneVme" />
+        <h1 class="title">OneVme</h1>
+        <p class="subtitle">Streameur jeux vidéo</p>
+
+        <div class="meta" aria-label="Jeux principaux">
+          <span class="pill"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Fortnite</span>
+          <span class="pill"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> R6 Siege</span>
+          <span class="pill"><i class="fa-solid fa-futbol" aria-hidden="true"></i> FC 26</span>
+        </div>
+      </header>
+
+      <nav class="links" aria-label="Liens OneVme">
+        <a href="https://www.twitch.tv/onevme_" target="_blank" rel="noopener" class="link">
+          <i class="fab fa-twitch" aria-hidden="true"></i> Regarder le live Twitch
+        </a>
+
+        <a href="https://www.youtube.com/@onevme_" target="_blank" rel="noopener" class="link">
+          <i class="fab fa-youtube" aria-hidden="true"></i> Chaîne YouTube
+        </a>
+
+        <a href="https://www.tiktok.com/@onevme_" target="_blank" rel="noopener" class="link">
+          <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
+        </a>
+
+        <a href="https://discord.gg/onevme" target="_blank" rel="noopener" class="link">
+          <i class="fab fa-discord" aria-hidden="true"></i> Rejoindre le Discord
+        </a>
+
+        <a href="https://www.instagram.com/onevme_" target="_blank" rel="noopener" class="link">
+          <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+        </a>
+
+        <a href="mailto:onevme.pro@gmail.com" class="link link--ghost">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Contact pro
+        </a>
+      </nav>
+
+      <div class="decor" aria-hidden="true">
+        <div class="decor-item"><i class="fas fa-skull-crossbones"></i></div>
+        <div class="decor-item"><i class="fas fa-map"></i></div>
+        <div class="decor-item"><i class="fas fa-anchor"></i></div>
+        <div class="decor-item"><i class="fas fa-compass"></i></div>
+      </div>
+
+      <footer class="footer">
+        Powered by <span>Team OneVme @jojaws</span>
+      </footer>
+    </section>
+  </main>
 </body>
-
 </html>
