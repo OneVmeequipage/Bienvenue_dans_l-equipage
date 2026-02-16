@@ -332,3 +332,13 @@ body{
 @media (prefers-reduced-motion: reduce){
   .link{ transition: none; }
 }
+
+@media (max-width: 420px){
+  .card{
+    padding-top: 58px; /* réserve la place pour le badge */
+  }
+  .profile{
+    margin-top: 14px;  /* on réduit car la card a déjà de l'espace */
+  }
+}
+
